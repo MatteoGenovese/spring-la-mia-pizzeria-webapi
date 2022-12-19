@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>PIZZERIA LUINO</h1>
+	
+	<a th:href="@{/login}">Login</a>
+	
+
+<div sec:authorize="hasAuthority('ADMIN')">
+  This content is only shown to administrators.
+</div>
+<div sec:authorize="hasAuthority('USER')">
+  This content is only shown to users.
+</div>
+</body>
+</html>
