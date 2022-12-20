@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.generation.italy.demo.pojo.Interface.PriceableInt;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,10 +47,12 @@ public class Pizza implements PriceableInt{
 	private int price;
 
 	@ManyToOne
+	@JsonIgnore
 	private Promoting promoting;
 	
 	
 	@ManyToMany
+	@JsonIgnore
 	private List<Ingredient> ingredientList;
 
 

@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.generation.italy.demo.pojo.Ingredient;
+import org.generation.italy.demo.pojo.Pizza;
 import org.generation.italy.demo.repository.IngredientRepository;
+import org.generation.italy.demo.repository.PizzaRepository;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,9 @@ public class IngredientService {
 
 	@Autowired
 	private IngredientRepository ingredientRepository;
+	
+	@Autowired
+	private PizzaRepository pizzaRepository;
 	
 	public void save(Ingredient ingredient) {
 		ingredientRepository.save(ingredient);
@@ -36,8 +41,6 @@ public class IngredientService {
 	public List<Ingredient> findByNameContaining(String name) {
 		return ingredientRepository.findByNameContaining(name);
 	}
-	
-	
 	
 	
 	@Transactional

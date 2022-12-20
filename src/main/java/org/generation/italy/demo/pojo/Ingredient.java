@@ -2,6 +2,7 @@ package org.generation.italy.demo.pojo;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,6 +27,7 @@ public class Ingredient {
 	private String name;
 	
 	@ManyToMany(mappedBy = "ingredientList")
+	@JsonIgnore
 	private List<Pizza> pizzaList;
 	
 

@@ -19,6 +19,11 @@ public class PizzaService {
 		pizzaRepository.save(pizza);
 	}
 	
+	public Pizza savePizza(Pizza pizza) {
+		
+		return pizzaRepository.save(pizza);
+	}
+	
 	public List<Pizza> findAll(){
 		return pizzaRepository.findAll();
 	}
@@ -37,6 +42,8 @@ public class PizzaService {
 	{
 		return pizzaRepository.findByNameContainingOrDescriptionContaining(s,s);
 	}
+
+
 	
 
 	
